@@ -4,15 +4,11 @@ export const formValidation = () => {
    function validateForm(event) {
       event.preventDefault();
 
-      // get input email value
       const emailValue = this['email'].value.trim();
 
-      // check email, email is valid?
       if (!isValidEmail(emailValue)) {
-         // email is not valid
          showErrorMessage({ field: this['email'], message: "Whoops, make sure it's an email" });
       } else {
-         // email is valid
          removeErrorMessage(this['email']);
       }
    }
