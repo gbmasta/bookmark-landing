@@ -1,0 +1,71 @@
+.btn {
+   cursor: pointer;
+   outline: 0;
+   display: inline-block;
+   line-height: 4.4rem;
+   font-weight: $font-weight-medium;
+   padding: 0rem 2.2rem;
+   border: 2px solid transparent;
+   border-radius: 5px;
+   font-family: inherit;
+   font-size: 1.32rem;
+   letter-spacing: 0.063em;
+   word-spacing: -0.1em;
+   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.12);
+   transition: background-color 0.2s ease-in-out, border-color 0.2s ease-in-out;
+   
+   @media screen and (min-width: $md-screen) {
+	   letter-spacing: 1px;
+	}
+
+   &--red {
+      background-color: $soft-red;
+      color: $white;
+
+      &:hover {
+         background-color: $white;
+         color: $soft-red;
+         border-color: $soft-red;
+      }
+   }
+
+   &--blue {
+      background-color: $soft-blue;
+      color: $white;
+
+      &:hover {
+         background-color: $white;
+         color: $soft-blue;
+         border-color: $soft-blue;
+      }
+   }
+
+   &--light {
+      background-color: rgba(0, 0, 0, 0.04);
+      color: $very-dark-blue;
+
+      &:hover {
+         background-color: $white;
+         border-color: $very-dark-blue;
+      }
+   }
+
+   &--info {
+   }
+
+   &--transparent {
+      background-color: transparent;
+      border-color: $white;
+      color: $white;
+      text-transform: uppercase;
+      font-size: 1.6rem;
+      letter-spacing: 3px;
+      font-weight: $font-weight-medium;
+
+      &:hover {
+         background-color: $white;
+         color: $very-dark-blue;
+         border-color: $soft-blue;
+      }
+   }
+}

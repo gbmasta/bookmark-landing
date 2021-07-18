@@ -1,0 +1,119 @@
+.contact {
+   background-color: $soft-blue;
+   padding: 6.6rem 0 6.9rem;
+   margin-top:  12.2rem;
+   @media screen and (min-width: $md-screen) {
+      margin-top:  15rem;
+   }
+
+   .container--contact {
+      max-width: 51rem;
+
+   }
+
+   &__intro {
+      p {
+         text-transform: uppercase;
+         letter-spacing: 4px;
+		 font-size: 1.3rem;
+		 @media screen and (min-width: $md-screen) {
+			  letter-spacing: 5px;
+		   }
+      }
+
+      h2 {
+         line-height: 1.3;
+		 margin-top: 1rem;
+		 @media screen and (min-width: $md-screen) {
+			margin-top: 3.5rem;
+		}
+      }
+   }
+
+   &__form {
+      display: flex;
+      align-items: flex-start;
+
+      @media screen and (max-width: $sm-screen) {
+         flex-direction: column;
+         max-width: 35rem;
+         margin-left: auto;
+         margin-right: auto;
+      }
+
+      .field {
+         background-color: $soft-red;
+         flex: 1; // flex-grow: 1; flex-shrink: 1; flex-basis: auto;
+         width: 100%;
+         border-radius: 5px;
+         box-shadow: 0 4px 12px 2px rgba(0, 0, 0, 0.08);
+         overflow: hidden;
+         position: relative;
+		 font-size: 1.5rem;
+		 letter-spacing: 1px;
+
+         &::after {
+            content: url(../images/icon-error.svg);
+            padding: 1.3rem;
+            pointer-events: none;
+            position: absolute;
+            right: 0;
+            top: 0;
+            display: none;
+         }
+
+         &-input {
+            outline: 0;
+            display: block;
+            width: 100%;
+            padding: 0 2rem;
+			line-height: 4.4rem;
+            border: 2px solid transparent;
+            border-radius: 5px;
+            font-family: inherit;
+            color: $very-dark-blue;
+
+            &::placeholder {
+               color: $grayish-blue;
+            }
+         }
+
+         &-error {
+            &::after {
+               display: inline-block;
+            }
+
+            .field-input {
+               border-color: $soft-red;
+            }
+         }
+      }
+
+      .error {
+         text-align: left;
+         padding: 0.5rem 1rem;
+
+         &-message {
+            font-style: italic;
+            letter-spacing: 0.5px;
+			font-size: 1rem;
+         }
+      }
+
+      .btn--contact {         
+		display: block;
+		width: 100%;
+		margin-left: 0;
+		margin-top: 1.5rem;
+        
+		 
+		 @media screen and (min-width: $sm-screen) {
+			display: inline-block;
+			margin-top:0;
+            margin-left: 1.5rem;
+			box-shadow: 0 4px 12px 2px rgba(0, 0, 0, 0.08);
+			width: auto;
+         }
+      }
+   }
+}

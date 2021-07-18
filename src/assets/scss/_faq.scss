@@ -1,0 +1,91 @@
+.faq {
+
+   .container--faq {
+	  margin-top: 6.8rem;
+	  @media screen and (min-width: $md-screen) {
+	    margin-top: 15rem;
+	  }
+   }
+
+   &__intro {
+      @include intro-center;
+   }
+
+   .accordion {
+	  @include intro-center;
+	  text-align: left;
+      margin-top: 4.3rem;
+	  
+	  @media screen and (min-width: $md-screen) {
+		margin-top: 5.5rem;
+	  }
+
+      &__header {
+         border-top: 1px solid lighten($grayish-blue, $amount: 20%);
+         position: relative;
+      }
+
+      &__item {
+         &:last-child .accordion__body {
+            border-bottom: 1px solid lighten($grayish-blue, $amount: 20%);
+         }
+		 
+		 &:first-child .accordion__header {
+			border-top: 0;
+			@media screen and (min-width: $md-screen) {
+				border-top: 1px solid lighten($grayish-blue, $amount: 20%);
+			}
+			
+		}
+      }
+
+      &__trigger {
+         display: block;
+         color: $very-dark-blue;
+		 font-weight: 500;
+		 letter-spacing: -0.03em;
+		 line-height: 6.4rem;
+		
+		@media screen and (min-width: $md-screen) {
+           letter-spacing: -0.01em;
+        }
+
+         &:hover {
+            color: $soft-red;
+         }
+
+         &::after {
+            content: url(../images/icon-arrow.svg);
+            position: absolute;
+            top: 0;
+            right: 0rem;
+            height: 100%;
+            display: flex;
+            align-items: center;
+            transform: rotate(0deg);
+            transition: transform 0.4s ease;
+
+            @media screen and (min-width: $md-screen) {
+               right: 2rem;
+            }
+         }
+
+         &--active::after {
+            content: url(../images/icon-arrow-red.svg);
+            transform: rotate(180deg);
+         }
+      }
+
+      &__body {
+         height: 0;
+         overflow: hidden;
+         transition: height 0.4s ease;
+
+         p {
+            line-height: 3.8rem;
+            padding: 1rem 0 3rem;
+			font-size: 1.62rem;
+         }
+      }
+   }
+}

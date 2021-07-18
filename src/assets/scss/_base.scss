@@ -1,0 +1,57 @@
+html {
+   box-sizing: border-box;
+   font-size: 62.5%;
+}
+
+*,
+*::before,
+*::after {
+   box-sizing: inherit;
+   margin: 0;
+   padding: 0;
+}
+
+body {
+   font-family: $font-primary;
+   font-size: $default-font-size;
+   font-weight: $font-weight-regular;
+   line-height: 1.7;
+   @media screen and (min-width: $md-screen) {
+      font-size: $default-font-size-lg; 
+	  line-height: 1.6;
+	}
+
+}
+
+ul,
+li {
+   list-style-type: none;
+}
+
+a {
+   display: inline-block;
+   text-decoration: none;
+   line-height: 1;
+}
+
+img {
+   display: block;
+   max-width: 100%;
+   object-fit: cover;
+}
+
+p {
+   color: $grayish-blue;
+   font-size: 1.5rem;
+
+   @media screen and (min-width: $md-screen) {
+      font-size: 1.80rem;
+   }
+}
+
+h1,
+h2,
+h3 {
+   color: $very-dark-blue;
+   font-weight: $font-weight-medium;
+}

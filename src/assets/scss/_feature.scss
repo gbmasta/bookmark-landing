@@ -1,0 +1,201 @@
+.featureintro {
+   padding-top: 10.8rem;
+   
+   @media screen and (min-width: $md-screen) {
+            padding-top: 9rem;
+   }
+   
+   &__intro {
+      @include intro-center;
+   }
+}
+.featuretabs {
+	
+   .tab {
+      &__list {
+         max-width: 43rem;
+         margin: 4rem auto 7.2rem;
+         display: flex;
+		 flex-direction: column;
+
+         @media screen and (min-width: $lg-screen) {
+			max-width: 73rem;
+            flex-direction: row;
+			margin: 4.4rem auto 7.2rem;
+         }
+      }
+
+      &__item {
+         flex: 1;
+         border-bottom: 1px solid lightgrey;
+
+         &:first-child {
+            @media screen and (max-width: $lg-screen) {
+               border-top: 1px solid lightgrey;
+            }
+         }
+      }
+
+      &__trigger {
+         display: flex;
+         align-items: center;
+         justify-content: center;
+         padding: 0rem 1rem;
+         color: $grayish-blue;
+		 font-size: 1.7rem;
+		 line-height: 5.7rem;
+		 position: relative;
+		 
+		 @media screen and (min-width: $lg-screen) {
+			padding: 2.7rem 1rem;
+			line-height: normal;
+			border-bottom: 4px solid transparent;
+		 }
+
+         &--active {
+            color: $very-dark-blue;
+            border-bottom-color: $soft-red;
+         }
+		 
+		 &--active:after {
+		  @media screen and (max-width: $lg-screen) {
+			  content: " ";
+			  display: block;
+			  position: absolute;
+			  height: 5px;
+			  background: $soft-red;
+			  width: 46%;
+			  left: 27%;
+			  bottom: 0;
+	       }
+		 }
+      }
+	}
+}
+
+.feature {
+	position: relative;
+	overflow: hidden;
+	padding-bottom: 10.8rem;
+   
+   @media screen and (min-width: $md-screen) {
+            padding-bottom: 9rem;
+   }
+	
+   .tab {
+	  
+	  &__panels {
+		position: relative;
+	  }
+
+      &__panel {
+         display: none;
+         align-items: center;
+
+         @media screen and (max-width: $lg-screen) {
+            flex-direction: column;
+         }
+
+         &--active {
+            display: flex;
+
+            .tab__col--1 {
+               animation: fade-in-left 0.4s ease forwards;
+
+               @keyframes fade-in-left {
+                  to {
+                     transform: translateX(0);
+                     opacity: 1;
+                  }
+               }
+            }
+            .tab__col--2 {
+               animation: fade-in-right 0.4s ease forwards;
+
+               @keyframes fade-in-right {
+                  to {
+                     transform: translateX(0);
+                     opacity: 1;
+                  }
+               }
+            }
+         }
+		 
+		 &--firstload {
+			.tab__col--1 {
+                transform: translateX(0);
+                opacity: 1;
+			  }
+			  .tab__col--2 {
+				 transform: translateX(0);
+                 opacity: 1;
+			  }
+		 }
+      }
+
+      &__col {
+         flex: 1;
+
+         &--1 {
+            position: relative;
+			
+			@media screen and (min-width: $sm-screen) {
+               min-height: 38rem;
+            }
+			
+			@media screen and (min-width: $md-screen) {
+               min-height: 38rem;
+            }
+
+            @media screen and (min-width: $lg-screen) {
+               transform: translateX(-200%);
+               opacity: 0;
+			   min-height: auto;
+            }
+         }
+
+         &--2 {
+            @media screen and (min-width: $lg-screen) {
+               transform: translateX(200%);
+               opacity: 0;
+            }
+         }
+      }
+   }
+
+   .feature-illustration-img {
+	  &:first-child {
+		@media screen and (min-width: $lg-screen) {
+		   margin-left: 0;
+		}
+	 }
+      @media screen and (min-width: $lg-screen) {
+		 object-position: top;
+		 margin-left: auto;
+		 max-width: 90%;
+      }
+   }
+
+   .feature-info {
+      max-width: 45rem;
+      margin-left: auto;
+	  text-align: center;
+	  margin-top: 7.5rem;
+
+
+      @media screen and (min-width: $lg-screen) {
+         
+         text-align: left;
+         margin-top: 0rem;
+      }
+	  
+	  .btn {
+		 @media screen and (max-width: $sm-screen) {
+			display: none;
+		 }
+	  }
+
+   }
+
+   
+}
