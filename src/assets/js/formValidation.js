@@ -37,12 +37,9 @@ export const formValidation = () => {
       errorElement.classList.add('error');
       errorElement.innerHTML = `<p class="error-message color-white">${message}</p>`;
 
-      // check previously there was an errror?
       if (errorExistElement) {
-         // if previously there was an error, replace it with new error element
          fieldContainer.replaceChild(errorElement, errorExistElement);
       } else {
-         // append error element to field container
          fieldContainer.appendChild(errorElement);
       }
    }
